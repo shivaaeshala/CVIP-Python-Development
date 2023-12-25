@@ -2,11 +2,6 @@ from tkinter import *
 import string
 import random
 from tkinter import messagebox
-# upper = list(string.ascii_uppercase)
-# lower = list(string.ascii_lowercase)
-# digit = list(string.digits)
-# sp = '! @ # $ % ^ & * ( ) - _ = + \ | { } ; : / ? . >'
-# special = sp.split(' ')
 characters= ''
 
 def req():
@@ -33,7 +28,6 @@ def req():
             char_set += str(string.punctuation)
         for i in exc_char:
             char_set = char_set.replace(i, '')
-        # characters = ''.join(char for char in char_set if char not in exclude_chars)
         if not char_set:
             raise ValueError("Select at least one character type")  
               
@@ -73,14 +67,10 @@ if __name__=='__main__':
     opt4.pack()
 
     display = StringVar()
-    # exe = display
     Label(root, text="Enter the characters you want to exclude", bg="white", pady=10).pack()
     exclude = Entry(root, textvariable=display, justify="center", width=20, borderwidth=2)
     exclude.pack(ipady=10,pady=10)
-    
-    # passw = StringVar()
-    # res = Entry(root, textvariable=passw, justify="center", width=20, borderwidth=2)
-    # res.pack(ipady=10,pady=10)
+
 
     gen_pass = Button(root, text="Generate password", command=req, width=30, height=3)
     gen_pass.pack(ipady=10)
